@@ -33,6 +33,7 @@ namespace MiningCore.Configuration
         DOGE, // Dogecoin,
         XMR, // Monero
         GRS, // GroestlCoin
+        DAL, // Dallar
         DGB, // Digibyte
         NMC, // Namecoin
         VIA, // Viacoin

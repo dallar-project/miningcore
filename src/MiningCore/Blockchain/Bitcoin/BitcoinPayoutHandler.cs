@@ -46,7 +46,7 @@ namespace MiningCore.Blockchain.Bitcoin
     [CoinMetadata(
         CoinType.BTC, CoinType.BCH, CoinType.NMC, CoinType.PPC,
         CoinType.LTC, CoinType.DOGE, CoinType.DGB, CoinType.VIA,
-        CoinType.GRS, CoinType.MONA, CoinType.VTC,
+        CoinType.GRS, CoinType.DAL, CoinType.MONA, CoinType.VTC,
         CoinType.BTG, CoinType.GLT, CoinType.STAK)]
     public class BitcoinPayoutHandler : PayoutHandlerBase,
         IPayoutHandler

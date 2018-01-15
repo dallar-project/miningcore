@@ -24,6 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "skein.h"
 #include "x11.h"
 #include "groestl.h"
+#include "throestl.h"
 #include "blake.h"
 #include "fugue.h"
 #include "qubit.h"
@@ -103,6 +104,11 @@ extern "C" MODULE_API void skein_export(const char* input, char* output, uint32_
 extern "C" MODULE_API void groestl_export(const char* input, char* output, uint32_t input_len)
 {
 	groestl_hash(input, output, input_len);
+}
+
+extern "C" MODULE_API void throestl_export(const char* input, char* output, uint32_t input_len)
+{
+	throestl_hash(input, output, input_len);
 }
 
 extern "C" MODULE_API void groestl_myriad_export(const char* input, char* output, uint32_t input_len)

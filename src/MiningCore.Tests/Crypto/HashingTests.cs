@@ -46,6 +46,22 @@ namespace MiningCore.Tests.Crypto
         }
 
         [Fact]
+        public void Throestl_Hash_Should_Match()
+        {
+            var hasher = new Throestl();
+            var result = hasher.Digest(testValue).ToHexString();
+
+            Assert.Equal("779bafd265c857eb9bb42e0d3c9a9d5c6c43ff5ccc870d2656c459e0e15dfcbd", result);
+        }
+
+        [Fact]
+        public void Throestl_Hash_Should_Throw_On_Null_Input()
+        {
+            var hasher = new Throestl();
+            Assert.Throws<ArgumentNullException>(() => hasher.Digest(null));
+        }
+
+        [Fact]
         public void Kezzak_Hash_Should_Match()
         {
             var hasher = new Kezzak();

@@ -34,6 +34,7 @@ namespace MiningCore.Blockchain.Bitcoin
         private static readonly IHashAlgorithm sha256DReverse = new DigestReverser(sha256D);
         private static readonly IHashAlgorithm x11 = new X11();
         private static readonly IHashAlgorithm groestl = new Groestl();
+        private static readonly IHashAlgorithm throestl = new Throestl();
         private static readonly IHashAlgorithm lyra2Rev2 = new Lyra2Rev2();
         private static readonly IHashAlgorithm scrypt_1024_1 = new Scrypt(1024, 1);
         private static readonly IHashAlgorithm skein = new Skein();
@@ -48,6 +49,9 @@ namespace MiningCore.Blockchain.Bitcoin
 
         private static readonly BitcoinCoinProperties groestlCoin =
             new BitcoinCoinProperties(Math.Pow(2, 8), sha256S, groestl, new DigestReverser(groestl));
+
+        private static readonly BitcoinCoinProperties dallar =
+            new BitcoinCoinProperties(Math.Pow(2, 8), sha256S, throestl, new DigestReverser(throestl));
 
         private static readonly BitcoinCoinProperties lyra2Rev2CoinVariantA =
             new BitcoinCoinProperties(Math.Pow(2, 8), sha256D, lyra2Rev2, sha256DReverse);
@@ -86,6 +90,9 @@ namespace MiningCore.Blockchain.Bitcoin
 
             // Groestl
             { CoinType.GRS, groestlCoin },
+
+            // Dallar
+            { CoinType.DAL, dallar },
 
             // Lyra2Rev2 - Variant A
             { CoinType.MONA, lyra2Rev2CoinVariantA },

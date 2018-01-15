@@ -1,0 +1,99 @@
+﻿{
+    "logging": {
+        "level": "info",
+        "enableConsoleLog": true,
+        "enableConsoleColors": true,
+        "logFile": "",
+        "logBaseDirectory": "",
+        "perPoolLogFile": false
+    },
+    "banning": {
+        "manager": "integrated",
+        "banOnJunkReceive": true,
+        "banOnInvalidShares": false
+    },
+    "notifications": {
+        "enabled": false,
+        "email": {
+            "host": "smtp.example.com",
+            "port": 587,
+            "user": "user",
+            "password": "password",
+            "fromAddress": "info@yourpool.org",
+            "fromName": "support"
+        },
+        "admin": {
+            "enabled": false,
+            "emailAddress": "user@example.com",
+            "notifyBlockFound": true
+        }
+    },
+    "persistence": {
+      "postgres": {
+        "host": "127.0.0.1",
+        "port": 5432,
+        "user": "miningcore",
+        "password": "fuckshit",
+        "database": "miningcore"
+      }
+    },
+    "paymentProcessing": {
+        "enabled": true,
+        "interval": 600,
+        "shareRecoveryFile": "recovered-shares.txt"
+    },
+  "pools": [
+    {
+      "id": "dallar",
+      "enabled": true,
+      "coin": {
+        "type": "DAL"
+      },
+      "address": "D5FVnKge84e7CmQBJAnsQWx8BNota6y2GJ",
+      "rewardRecipients": [
+        {
+          "address": "DJjGai1EcefUmJEwVUcA929LvxsQiG3Ham",
+          "percentage": 1.0
+        }
+      ],
+      "blockRefreshInterval": 1000,
+      "jobRebroadcastTimeout": 55,
+      "clientConnectionTimeout": 600,
+      "banning": {
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
+      },
+      "ports": {
+        "3042": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 16,
+          "name": "Standard",
+          "varDiff": {
+            "minDiff": 2,
+            "targetTime": 15,
+            "retargetTime": 90,
+            "variancePercent": 30
+          }
+        }
+      },
+      "daemons": [
+        {
+          "host": "127.0.0.1",
+          "port": 20033,
+          "user": "fuckass",
+          "password": "shitfuckshit"
+        }
+      ],
+      "paymentProcessing": {
+        "enabled": true,
+        "minimumPayment": 0.5,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        }
+      }
+    }
+  ]
+}
